@@ -8,9 +8,9 @@ B is bounding box number i.e. how many objects we can detect per grid cell
 
 (x,y) for offset from the top-left corner of the grid cell itself
 h and w for the height and width of the object region
-C for the probability that there is an object in the region
+C for the probability that there is an object in the region (Confidence)
 
-+n because that is how many classes we have, i.e. probability of class a given object exists in the grid cell
++n because that is how many classes we have, i.e. probability of class a, given object exists in the grid cell
 
 x and y are 0 to 1 proportion of the grid cell
 
