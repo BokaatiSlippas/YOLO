@@ -32,7 +32,9 @@ $$
 
 The localisation loss $L_{loc}$ is:
 
-$L_{loc} = L_{conf} + L_{coord}$
+$$
+L_{loc} = L_{conf} + L_{coord}
+$$
 
 The confidence loss $L_{conf}$ is:
 
