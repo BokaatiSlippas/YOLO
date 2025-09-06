@@ -27,7 +27,7 @@ $$
 The classification loss $L_{cls}$ is:
 
 $$
-L_{cls} = \sum_{i=0}^{S^2} \Pi_i^{obj} \sum_{c \in classes} (p_i(c) - p_i(c))^2
+L_{cls} = \sum_{i=0}^{S^2} \mathbb{1}_{i}^{obj} \sum_{c \in classes} (p_i(c) - p_i(c))^2
 $$
 
 The localisation loss $L_{loc}$ is:
