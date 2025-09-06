@@ -36,10 +36,8 @@ square differences between prediction and ground truth
 L_conf = sum over all grid cells i (sum over all bounding boxes j where cell i and box j is responsible for the object (l))
 
 $
-% Complete YOLO Loss function
-\[
 L_{loc} = L_{conf} + L_{coord}
-\]
+$
 
 % Confidence Loss (L_conf)
 \[
