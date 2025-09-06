@@ -42,17 +42,12 @@ $L_{loc} = L_{conf} + L_{coord}$
 The confidence loss $L_{conf}$ is:
 
 $$
-L_{conf} = \sum_{i=0}^{S^2} \sum_{j=0}^B 
-\left[ \mathds{1}_{ij}^{obj} (C_i - \hat{C}_i)^2 \right] +
-\lambda_{noobj} \sum_{i=0}^{S^2} \sum_{j=0}^B \left[ \mathds{1}_{ij}^{noobj} (C_i - \hat{C}_i)^2 \right]
+L_{conf} = \sum_{i=0}^{S^2} \sum_{j=0}^{B} \left[ \lambda_{\text{mathds}} \frac{ab_j}{ij} (C_i - \hat{C}_i)^2 \right] + \lambda_{noobj} \sum_{i=0}^{S^2} \sum_{j=0}^{B} \left[ \lambda_{\text{mathds}} \frac{noobj}{ij} (C_i - \hat{C}_i)^2 \right]
 $$
 
-The coordinate loss $L_{coord}$ is:
+The coordinate loss $L_{cond}$ is:
 
 $$
-L_{coord} = \lambda_{coord} \sum_{i=0}^{S^2} \sum_{j=0}^B \mathds{1}_{ij}^{obj}
-\left[
-(x_i - \hat{x}_i)^2 + (y_i - \hat{y}_i)^2 + \left( \sqrt{w_i} - \sqrt{\hat{w}_i} \right)^2 + \left( \sqrt{h_i} - \sqrt{\hat{h}_i} \right)^2
-\right]
+L_{cond} = \lambda_{cond} \sum_{i=0}^{S^2} \sum_{j=0}^{B} \lambda_{\text{mathds}} \frac{ab_j}{ij} \left[ (x_i - \hat{x}_i)^2 + (y_i - \hat{y}_i)^2 + \left( \sqrt{w_i} - \sqrt{\hat{w}_i} \right)^2 + \left( \sqrt{h_i} - \sqrt{\hat{h}_i} \right)^2 \right]
 $$
 
