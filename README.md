@@ -18,22 +18,21 @@ w and h are proportion of the entire image
 
 We select a box if the IoU (Interesection/Union) is greater than a selected threshold
 
+The loss equation is:
+
+$$
+L = L_{cls} + L_{loc}
+$$
+
 Loss equation: L = L_class + L_localisation
 
-L_class = sum over all grid cells i with objects actually present (sum over all classes c ((probability of c in i) - ground truth)^2)
+The classification loss $L_{cls}$ is:
+
+$$
+L_{cls} = \sum_{i=0}^{S^2} \Pi_i^{obj} \sum_{c \in classes} (p_i(c) - p_i(c))^2
+$$
 
 L_localisation = L_coord + L_conf
-
-L_coord = lambda_coord * (sum over all grid cells i (sum over all bounding boxes j where cell i and box j is responsible for the object (l)))
-
-$l = \left( \sqrt{w_i} - \sqrt{\hat{w}_i} \right)^2 + 
-    \left( \sqrt{h_i} - \sqrt{\hat{h}_i} \right)^2 + 
-    (x_i - \hat{x}_i)^2 + 
-    (y_i - \hat{y}_i)^2$
-
-square differences between prediction and ground truth
-
-L_conf = sum over all grid cells i (sum over all bounding boxes j where cell i and box j is responsible for the object (l))
 
 The total localization loss is defined as:
 
