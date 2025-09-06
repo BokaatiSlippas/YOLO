@@ -24,8 +24,6 @@ $$
 L = L_{cls} + L_{loc}
 $$
 
-Loss equation: L = L_class + L_localisation
-
 The classification loss $L_{cls}$ is:
 
 $$
