@@ -32,9 +32,7 @@ $$
 L_{cls} = \sum_{i=0}^{S^2} \Pi_i^{obj} \sum_{c \in classes} (p_i(c) - p_i(c))^2
 $$
 
-L_localisation = L_coord + L_conf
-
-The total localization loss is defined as:
+The localisation loss $L_{loc}$ is:
 
 $L_{loc} = L_{conf} + L_{coord}$
 
