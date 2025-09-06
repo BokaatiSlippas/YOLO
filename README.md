@@ -30,3 +30,8 @@ $l = \left( \sqrt{w_i} - \sqrt{\hat{w}_i} \right)^2 +
     \left( \sqrt{h_i} - \sqrt{\hat{h}_i} \right)^2 + 
     (x_i - \hat{x}_i)^2 + 
     (y_i - \hat{y}_i)^2$
+
+square differences between prediction and ground truth
+
+
+
