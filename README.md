@@ -47,3 +47,9 @@ The coordinate loss $L_{coord}$ is:
 $$
 L_{coord} = \lambda_{coord} \sum_{i=0}^{S^2} \sum_{j=0}^{B} \mathbb{1}_{ij}^{obj} \left[ (x_i - \hat{x}_i)^2 + (y_i - \hat{y}_i)^2 + \left( \sqrt{w_i} - \sqrt{\hat{w}_i} \right)^2 + \left( \sqrt{h_i} - \sqrt{\hat{h}_i} \right)^2 \right]
 $$
+
+
+The confidence loss is a measure of how well we detected objects as being present and not present
+
+The coordinate loss is a measure of how far off we are from the actual object
+
