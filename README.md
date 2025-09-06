@@ -27,4 +27,4 @@ L_localisation = L_coord + L_confidence
 L_coord = sum over all grid cells i (sum over all bounding boxes j where cell i and box j is responsible for the object ($l = \left( \sqrt{w_i} - \sqrt{\hat{w}_i} \right)^2 + 
     \left( \sqrt{h_i} - \sqrt{\hat{h}_i} \right)^2 + 
     (x_i - \hat{x}_i)^2 + 
-    (y_i - \hat{y}_i)^2$)
+    (y_i - \hat{y}_i)^2$
