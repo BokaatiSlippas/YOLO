@@ -39,13 +39,7 @@ $L_{loc} = L_{conf} + L_{coord}$
 
 
 $L_{conf} = \sum_{i=0}^{S^2} \sum_{j=0}^B 
-\left[ 
-\mathds{1}_{ij}^{obj} (C_i - \hat{C}_i)^2 
-\right] 
-+ \lambda_{noobj} \sum_{i=0}^{S^2} \sum_{j=0}^B 
-\left[ 
-\mathds{1}_{ij}^{noobj} (C_i - \hat{C}_i)^2 
-\right]$
+\left[ \mathds{1}_{ij}^{obj} (C_i - \hat{C}_i)^2 \right] + \lambda_{noobj} \sum_{i=0}^{S^2} \sum_{j=0}^B \left[ \mathds{1}_{ij}^{noobj} (C_i - \hat{C}_i)^2 \right]$
 
 
 % Coordinate Loss (L_coord)
