@@ -22,7 +22,7 @@ Loss equation: L = L_class + L_localisation
 
 L_class = sum over all grid cells i with objects actually present (sum over all classes c ((probability of c in i) - ground truth)^2)
 
-L_localisation = L_coord + L_confidence
+L_localisation = L_coord + L_conf
 
 L_coord = lambda_coord * (sum over all grid cells i (sum over all bounding boxes j where cell i and box j is responsible for the object (l)))
 
@@ -33,5 +33,32 @@ $l = \left( \sqrt{w_i} - \sqrt{\hat{w}_i} \right)^2 +
 
 square differences between prediction and ground truth
 
+L_conf = sum over all grid cells i (sum over all bounding boxes j where cell i and box j is responsible for the object (l))
 
+$
+% Complete YOLO Loss function
+\[
+L_{loc} = L_{conf} + L_{coord}
+\]
+
+% Confidence Loss (L_conf)
+\[
+L_{conf} = \sum_{i=0}^{S^2} \sum_{j=0}^B 
+\left[ 
+\mathds{1}_{ij}^{obj} (C_i - \hat{C}_i)^2 
+\right] 
++ \lambda_{noobj} \sum_{i=0}^{S^2} \sum_{j=0}^B 
+\left[ 
+\mathds{1}_{ij}^{noobj} (C_i - \hat{C}_i)^2 
+\right]
+\]
+
+% Coordinate Loss (L_coord)
+\[
+L_{coord} = \lambda_{coord} \sum_{i=0}^{S^2} \sum_{j=0}^B \mathds{1}_{ij}^{obj}
+\left[
+(x_i - \hat{x}_i)^2 + (y_i - \hat{y}_i)^2 + \left( \sqrt{w_i} - \sqrt{\hat{w}_i} \right)^2 + \left( \sqrt{h_i} - \sqrt{\hat{h}_i} \right)^2
+\right]
+\]
+$
 
